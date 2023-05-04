@@ -1,0 +1,109 @@
+/* hier pfuscht lisa*/
+:root { 
+    --primary: #df4807;
+    --primary_toned: #c22d00;
+    --secondary: #006999;
+    --secondary_95: rgba(0, 105, 153, .95);
+    --secondary_50: rgba(0, 105, 153, .5);
+    --accent_1: #001624;
+    --accent_2: #fcc41d;
+    --accent_3: #35b6a2;
+    --accent_4: #cc0081;
+    --flow1: #ff692e;
+    --flow2: #f45c25;
+    --flow3: #e95220;
+    --font: var(--warmDarkGrey);
+    --headline: var(--font);
+    --logoMain: var(--primary);
+    --logoMeta: var(--font);
+    --nav-global_bg: var(--accent_1);
+    --stage_bar: var(--accent_1);
+    --cm_abstract_bg-dark: var(--accent_1);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body {
+    /* background-color: var(--bgCol); */
+    background-image: url("../src/leute.jpg") ;
+    background-size: cover;
+    color: var(--textCol);
+    font-family:'Open Sans';
+    font-size: 1.5rem;
+    transition: 150ms;
+    
+
+    display:grid;
+    justify-items: center;
+    grid-template-columns: auto;
+	
+    grid-auto-rows: auto;
+    gap:0px;
+	grid-template-areas:
+        'heads'
+        'side'
+        'mains'
+		'foots'; /*mögliches impressum*/
+  }
+
+    body > header{ grid-area: heads; background-color: var(--headergrid);}
+    body > nav{ grid-area: navi; padding:1rem;background-color: var(--navgrid);}
+    body > main{ grid-area: mains; max-width:70rem;min-width:50rem; padding: 3rem; background-color: var(--maingrid);}
+    body > aside{ grid-area: side; padding:0;background-color: var(--asidegrid);}
+    body > footer{ grid-area: foots; background-color: var(--footergrid);} /*mögliches impressum*/
+
+section {
+    text-align: center;
+    background-color:white;
+    border-radius: 1em;
+    border-bottom-left-radius: 0;
+    width: 90%;
+    height: 80%;
+    box-shadow: 1px 1px 1px 1px #00000014;
+    border: 1px solid #6d7373;
+}
+
+section h1 {
+    text-align: left;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    color: var(--accent_3);
+}
+
+p {
+    color: #575756;
+    font-size: 1em;
+    text-align: left;
+    padding: 1em;
+    background-color: #f5f4f3;
+    margin: 2em;
+    margin-top: 1em;
+    border-radius: 1em;
+}
+
+.startBtn {
+    font-size: 25px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (orientation: landscape){
+    section {
+        width: 60%;
+        min-width: 30em;
+        height: 70%;
+        min-height: 20em;
+    }
+
+    section h1 {
+        width: 10%;
+    }
+}
